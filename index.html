@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset = "utf-8">
+        <title>Challeng Alura</title>
+        <link rel = "stylesheet" href = "reset.css">
+        <link rel = "stylesheet" href="estilo.css">
+    </head>
+    <body>
+        <header><h1><img class = "imagen-logo" src = "imagenes/logo-alura.png"></h1></header>
+            <div class="division1">
+                <ul class="lista1">
+                    <label class= "textoInicial" id = "textoInicial">Ingrese su texto aquí</label>
+                    <li><textarea class="text1" id="text1" spellcheck="false"></textarea></li>
+                    <li><img class = "imagen-admiracion" src = "imagenes/admiracion.png"><h6 class = "textInfo">Solo letras minúsculas y sin acentos</h6></li>
+                    <li>
+                        <button class="botones" id="botEncrip"> Encriptar </button>
+                        <button class="botones" id = "botDesencrip"> Desencriptar </button>
+                    </li>
+                </ul>
+            </div>
+            <img class = "imagen-blanco" src = "imagenes/rectangulo-blanco.png">
+            
+            <div class="division2">
+                <ul class="lista2">
+                    <li><textarea class="textResultado" id = "areaCopia" spellcheck="false"></textarea></li>
+                    <li><button class="botones" id="botCopiar"> Copiar </button></li>
+                </ul>
+                
+                <ul class="lista3">
+                    <li><img class = "imagen-muneco" id = "muneco" src = "imagenes/muneco.png"></li>
+                    <li class="letra1" id="letra1">Ningún mensaje fue encontrado</li>
+                    <li class="letra2" id="letra2">Ingresa el texto que deseas encriptar o desencriptar</li>
+                </ul>
+            </div>
+            
+
+
+    </body>
+
+    <script src = "script.js"></script>
+
+    <!--Las "llaves" de encriptación que utilizaremos son las siguientes:
+
+    `La letra "e" es convertida para "enter"`
+    `La letra "i" es convertida para "imes"`
+    `La letra "a" es convertida para "ai"`
+    `La letra "o" es convertida para "ober"`
+    `La letra "u" es convertida para "ufat"`
+
+    **Requisitos:**
+    - Debe funcionar solo con letras minúsculas
+    - No deben ser utilizados letras con acentos ni caracteres especiales
+    - Debe ser posible convertir una palabra para la versión encriptada también devolver una palabra encriptada para su versión original. -->
+<html>
+
+

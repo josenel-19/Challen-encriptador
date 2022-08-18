@@ -1,0 +1,155 @@
+
+body{
+    background-color: #F3F5FC;
+    color: #343A40;
+}
+header{
+    padding-top: 40px;
+    padding-left: 84px;
+    
+}
+
+.division1{
+    margin-left: 240px;
+    color: #343A40;
+}
+
+.textoInicial{
+    text-decoration: none;
+    color: #0A3871;
+    font-size: 35px;
+    position: absolute;
+    top: 115px;
+    background-color: #F3F5FC;
+    border-style: none;
+
+}
+
+.textoInicial:hover{
+    cursor: pointer;
+}
+
+.text1{
+    margin-top: 20px;
+    width: 500px;
+    padding-bottom: 300px;
+    font-size: 35px;
+    overflow-x:hidden;
+    overflow-y: hidden;
+    color: #0A3871;
+    background-color: #F3F5FC;
+    border-style: none;
+    outline: none; /*quita linea despues del click dentro del elemento*/
+}
+
+
+.imagen-admiracion{
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.textInfo{
+    display: inline-block;
+    color: #495057;
+    margin-left: 3px;
+}
+
+
+.division2{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+
+.botones{
+    position: relative;
+    z-index: 5px;
+    margin-top: 10px;
+    width: 250px;
+    height: 45px;
+}
+
+#botEncrip{
+    background-color: #0A3871;
+    color: #FFFFFF;
+    border-radius: 15px;
+    border-color: #0A3871;;
+
+}
+
+#botDesencrip{
+    background-color: #D8DFE8;
+    color: #0A3871;
+    border-style: solid;
+    border-radius: 15px;
+    border-color: #0A3871;
+}
+.lista2{
+    position: relative;
+    top: 40px;
+    right:60px;
+}
+
+.lista3{
+    position: absolute;
+    top: 120px;
+    right: 40px;
+}
+
+.textResultado{
+    color: #495057;
+    width: 300px;
+    padding-bottom: 390px;
+    font-size: 35px;
+    overflow-x:hidden;
+    overflow-y: hidden;
+    background-color: #ffffff;
+    border-style: none;
+    outline: none; /*quita linea despues del click dentro del elemento*/
+}
+
+#botCopiar{
+    width: 300px;
+    background-color: #FFFFFF;
+    color: #0A3871;
+    border-style: solid;
+    border-radius: 15px;
+    border-color: #0A3871;
+
+}
+
+.imagen-blanco{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 600px;
+    margin-top: 40px;
+    margin-right: 40px;
+}
+
+.letra1{
+    color: #343A40;
+    margin-left: 60px;
+    width: 200px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 4px;
+    
+}
+
+.letra2{
+    color: #495057;
+    margin-left: 50px;
+    width: 220px;
+    text-align: center;
+    font-size: 15px;
+}
+
+
+
+
+
+
+
