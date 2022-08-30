@@ -1,40 +1,38 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
     <head>
-        <meta charset = "utf-8">
-        <title>Challeng Alura</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width">
         <link rel = "stylesheet" href = "reset.css">
         <link rel = "stylesheet" href="estilo.css">
-    </head>
-    <body>
-        <header><h1><img class = "imagen-logo" src = "imagenes/logo-alura.png"></h1></header>
-            <div class="division1">
-                <ul class="lista1">
-                    <label class= "textoInicial" id = "textoInicial">Ingrese su texto aquí</label>
-                    <li><textarea class="text1" id="text1" spellcheck="false"></textarea></li>
-                    <li><img class = "imagen-admiracion" src = "imagenes/admiracion.png"><h6 class = "textInfo">Solo letras minúsculas y sin acentos</h6></li>
-                    <li>
-                        <button class="botones" id="botEncrip"> Encriptar </button>
-                        <button class="botones" id = "botDesencrip"> Desencriptar </button>
-                    </li>
-                </ul>
-            </div>
-            <img class = "imagen-blanco" src = "imagenes/rectangulo-blanco.png">
-            
-            <div class="division2">
-                <ul class="lista2">
-                    <li><textarea class="textResultado" id = "areaCopia" spellcheck="false"></textarea></li>
-                    <li><button class="botones" id="botCopiar"> Copiar </button></li>
-                </ul>
-                
-                <ul class="lista3">
-                    <li><img class = "imagen-muneco" id = "muneco" src = "imagenes/muneco.png"></li>
-                    <li class="letra1" id="letra1">Ningún mensaje fue encontrado</li>
-                    <li class="letra2" id="letra2">Ingresa el texto que deseas encriptar o desencriptar</li>
-                </ul>
-            </div>
-            
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Gotu&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        <title>Challeng Alura</title>
+    <head>
 
+    <body>
+
+        <div class="contenedor">
+            <header><h1><img class = "imagen-logo" src = "imagenes/logo-alura.png"></h1></header>
+            <main>    
+                <div class="division1">       
+                    <textarea class="text1" id="text1" spellcheck="false" placeholder="Su texto aquí" rows="13" cols="12"></textarea>
+                    <span>&#9888</span><h6 class = "textInfo"> Solo letras minúsculas y sin acentos</h6>
+                    <button class="botones" id="botEncrip"> Encriptar </button>
+                    <button class="botones" id = "botDesencrip"> Desencriptar </button>
+                </div>
+                    
+                    
+                <div class="division2">
+                    <textarea class="textResultado" id = "areaCopia" spellcheck="false" rows="4" readonly></textarea>
+                    <label class="letra1" id="letra1">Ningún mensaje fue encontrado</label>
+                    <label class="letra2" id="letra2">Ingresa el texto que deseas encriptar o desencriptar</label>
+                    <button class="botones" id="botCopiar"> Copiar </button>   
+                </div>
+            </main>
+        </div>
 
     </body>
 
