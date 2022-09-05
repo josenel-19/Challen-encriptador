@@ -114,7 +114,7 @@ function mostrarElementos(idElemento){
 
 //parametros iniciales al cargar pagina
 ocultarElementos("botCopiar");
-cajaTexto1.onkeypress = validarTexto;
+cajaTexto1.onkeydown = validarTexto;
 botDesencrip.onclick = desencriptador;
 botEncrip.onclick = encriptador;
 botCopy.onclick = copiarTexto;
