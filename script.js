@@ -6,7 +6,7 @@ const letraEncrip = ["ai","enter","imes","ober","ufat"]; // caracteres a desencr
 
 //capturo elementos html
 let cajaTexto1 = document.querySelector("#text1"); 
-let CajaTextoResult = document.querySelector("#areaCopia");
+let CajaTextoResult = document.getElementById("areaCopia");
 let botEncrip = document.querySelector("#botEncrip");
 let botDesencrip = document.querySelector("#botDesencrip");
 let botCopy = document.querySelector("#botCopiar");
@@ -29,6 +29,7 @@ function encriptador (){
         mostrarElementos("areaCopia");
         ocultarElementos("letra1");
         ocultarElementos("letra2");
+        CajaTextoResult.style.marginTop = "1em";
         let contador = 1;
         let caracterEncriptado = "";
         let frase = cajaTexto1.value;         
@@ -57,7 +58,11 @@ function encriptador (){
             contador++;
         }
         CajaTextoResult.style.background = "white";
+        CajaTextoResult.style.height = "auto";
+        CajaTextoResult.style.height = ""+ CajaTextoResult.scrollHeight + "px";
+        
         }
+
     
 }
 
@@ -73,6 +78,7 @@ function desencriptador(){
         mostrarElementos("areaCopia");
         ocultarElementos("letra1");
         ocultarElementos("letra2");
+        CajaTextoResult.style.marginTop = "1em";
 
         //compara toda la frase en busqueda de los caracteres encriptados, y lo reemplaza con la letra correspondiente (vocal)
         let contador = 0;
@@ -83,15 +89,19 @@ function desencriptador(){
             CajaTextoResult.value = textoDesencriptado;
             contador++;  
         }
-        CajaTextoResult.style.background = "white"; 
+        CajaTextoResult.style.background = "white";
+        CajaTextoResult.style.height = "auto";
+        CajaTextoResult.style.height = ""+ CajaTextoResult.scrollHeight + "px";
     }
               
 }
 
 // evita que se ingresen catacteres fuera de las 2 reglas declaradas
-function validarTexto (evento){
-    if ((!espacio.test(evento.key)) && (!letrasOk.test(evento.key))){
-        evento.preventDefault();
+function validarTexto (){
+    let texto = cajaTexto1.value;
+    if ((!espacio.test(texto.charAt(texto.length-1))) && (!letrasOk.test(texto.charAt(texto.length-1)))){
+        texto = texto.substring(0,texto.length-1);
+        cajaTexto1.value = texto;
     }
 }
 
@@ -105,18 +115,16 @@ function copiarTexto(){
 }
 
 function ocultarElementos(idElemento){
-    document.getElementById(idElemento).style.visibility = "hidden";
+    document.getElementById(idElemento).style.display = "none";
 }
 
 function mostrarElementos(idElemento){
-    document.getElementById(idElemento).style.visibility = "visible";
+    document.getElementById(idElemento).style.display = "inline-block";
 }
 
 //parametros iniciales al cargar pagina
 ocultarElementos("botCopiar");
-cajaTexto1.onkeypress = validarTexto;
+cajaTexto1.oninput = validarTexto;
 botDesencrip.onclick = desencriptador;
 botEncrip.onclick = encriptador;
 botCopy.onclick = copiarTexto;
-         
-

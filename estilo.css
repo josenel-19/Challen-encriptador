@@ -20,9 +20,10 @@ h1{
 
 .textResultado, .text1{
     border-style: none;
+    resize: none;
 }
 
-#botEncrip{
+.division1 button:nth-of-type(1){
     background-color: #4165F3;
     border-color: #4165F3;
     color: white;
@@ -33,7 +34,7 @@ h1{
     margin-left: 1em;
 }
 
-#botDesencrip, #botCopiar{
+.division1 button:nth-of-type(2), .division2 .botones{
     background-color: white;
     border-color: #4165F3;
     color: #4165F3;
@@ -46,10 +47,12 @@ h1{
 
 .textResultado{
     outline:none;
-    margin-top: 1em;
+    margin: 1em 0;
     background-image: url(imagenes/muneco.png);
     background-position: center;
     background-repeat:no-repeat;
+    height: 270px;
+    max-height: 400px;
 }
 
 .letra1{
@@ -60,6 +63,8 @@ h1{
 .letra2{
     font-size: 1.1em;
 }
+
+
 
 @media all and (min-width: 100px){
     .division1, .division2{
@@ -85,23 +90,20 @@ h1{
         font-weight: bold;
     }
 
-    #botCopiar{
-        width: 90%;
-        margin: 0 5%;
-    }
-
     .division2{
         background: white;
-    }
-
-    .textResultado{
-        height: 10em;
     }
 
     .letra1, .letra2{
         display: block;
         text-align: center;
         margin: .5em 1em;
+    }
+
+    .division2 .botones{
+        position: relative;
+        width: 70%;
+        margin: 1em 15%;
     }
 }
     
@@ -110,11 +112,10 @@ h1{
         display: inline-block;
         margin-right: 30%;
     }
-    #botEncrip, #botDesencrip{
+    .division1 .botones{
         width: 49.5%;
     }
 }
-
 
 @media all and (min-width: 1040px){
     .division1{
@@ -138,7 +139,7 @@ h1{
     }
 
     .textResultado{
-        height: 13.9em;
+        margin-top: 120px;
     }
 
     .letra1, .letra2{
@@ -147,6 +148,13 @@ h1{
     
     .letra2{
         margin-bottom: 1.8em;
+    }
+
+    .division2 .botones{
+        position: absolute;
+        top: 514px;
+        right: 15px;
+        margin: 0;
     }
 }
 
