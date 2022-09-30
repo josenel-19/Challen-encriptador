@@ -4,16 +4,13 @@ let textoDesencriptado = "";
 const letraNormal = ["a","e","i","o","u"]; // caracteres a encriptar nota: solo debe ser 1 caracter.
 const letraEncrip = ["ai","enter","imes","ober","ufat"]; // caracteres a desencriptar nota: cada encriptado dede tener su pareja(letraNormal)
 
-//capturo elementos html
+//capturo los elementos html
 let cajaTexto1 = document.querySelector("#text1"); 
 let CajaTextoResult = document.getElementById("areaCopia");
 let botEncrip = document.querySelector("#botEncrip");
 let botDesencrip = document.querySelector("#botDesencrip");
 let botCopy = document.querySelector("#botCopiar");
-
-//reglas de caracteres permitidos
-const letrasOk = new RegExp("^[a-z]+$","i");  //[a-z]solo letras, +$ se puede repitir y i se permite mayusculas
-const espacio = new RegExp(/ /, "g");//se permiten espacios
+let textoInformativo = document.querySelector("#txtInformativo");
 
 //limpia textarea o los input
 function limpiarTexto (cajaTexto){
@@ -21,8 +18,8 @@ function limpiarTexto (cajaTexto){
 }
 
 function encriptador (){
-    if(cajaTexto1.value==""){
-
+    if (validarTextoAlHacerClick() === false){
+        alert("Solo se permiten letras sin caracteres especiales");
     }else{
         limpiarTexto(CajaTextoResult);
         mostrarElementos("botCopiar");
@@ -61,9 +58,7 @@ function encriptador (){
         CajaTextoResult.style.height = "auto";
         CajaTextoResult.style.height = ""+ CajaTextoResult.scrollHeight + "px";
         
-        }
-
-    
+    }
 }
 
 
@@ -96,12 +91,32 @@ function desencriptador(){
               
 }
 
-// evita que se ingresen catacteres fuera de las 2 reglas declaradas
-function validarTexto (){
+// evita que se ingresen catacteres fuera de la reglas declaradas
+function validarTextoAlEscribir (){
+    //reglas de caracteres permitidos
+    const letrasOk = new RegExp(/^[a-z\s]/, "i");  //[a-z]solo letras, +$ se puede repitir \s se permite espacio y i se permite mayusculas
+    //(/^[A-Za-z0-9\s]+$/g)
+
     let texto = cajaTexto1.value;
-    if ((!espacio.test(texto.charAt(texto.length-1))) && (!letrasOk.test(texto.charAt(texto.length-1)))){
+    if ((!letrasOk.test(texto.charAt(texto.length-1)))){ //&& (!letrasOk.test(texto.charAt(texto.length-1)))){
         texto = texto.substring(0,texto.length-1);
         cajaTexto1.value = texto;
+    }
+}
+
+function validarTextoAlHacerClick(){
+    cajaTexto1.value = cajaTexto1.value.toLowerCase();
+    let texto = cajaTexto1.value;
+    let valido = true;
+    const letrasValidas = new RegExp(/^[a-z\s]+$/, "g");
+    if ((!letrasValidas.test(texto))) {
+        textoInformativo.style.color = "red";
+        valido = false;
+        return valido;  
+    } else{
+        textoInformativo.style.color = "#343A40";
+        valido = true;
+        return valido;
     }
 }
 
@@ -124,7 +139,7 @@ function mostrarElementos(idElemento){
 
 //parametros iniciales al cargar pagina
 ocultarElementos("botCopiar");
-cajaTexto1.oninput = validarTexto;
+cajaTexto1.oninput = validarTextoAlEscribir;
 botDesencrip.onclick = desencriptador;
 botEncrip.onclick = encriptador;
 botCopy.onclick = copiarTexto;
